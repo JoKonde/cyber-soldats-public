@@ -63,12 +63,12 @@ col1, col2 = st.columns(2)
 if st.session_state.page > 0:
     if col1.button("⬅ Précédent"):
         st.session_state.page -= 1
-        st.experimental_rerun()
+        st.rerun()
 
 if st.session_state.page < (len(questions) // 5):
     if col2.button("Suivant ➡"):
         st.session_state.page += 1
-        st.experimental_rerun()
+        st.rerun()
 else:
     if st.button("✅ Soumettre"):
         score = sum([5 - ["Très bon", "Bon", "Neutre", "Mauvais", "Très mauvais"].index(ans) 
