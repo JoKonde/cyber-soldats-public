@@ -12,18 +12,14 @@ def init_db():
         # Création de la table 'candidats'
         cursor.execute("""
         CREATE TABLE candidats (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nom TEXT,
-    postnom TEXT,
-    prenom TEXT,
-    telephone TEXT,
-    email TEXT,
-    profession TEXT,
-    description_profession TEXT,
-    adresse_residentielle TEXT,
-    photo_base64 TEXT,
-    mot_de_passe TEXT
-)
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nom TEXT NOT NULL,
+            telephone TEXT NOT NULL,
+            email TEXT NOT NULL,
+            photo TEXT,
+            amis TEXT,
+            score INTEGER NOT NULL
+        )
 """)
         conn.commit()
         conn.close()
